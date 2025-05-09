@@ -1,0 +1,46 @@
+
+{
+  "baujahr_des_hauses": null,
+  "heizung": {
+    "typ": null,
+    "alter": null
+  },
+  "daemmung": {
+    "fassade_gedaemmt": null,
+    "dach_gedaemmt": {
+      "ja_nein": null,
+      "jahr": null
+    }
+  },
+  "fenster": {
+    "typ": null,
+    "erneuerungsjahr": null
+  },
+  "keller": {
+    "isoliert": null,
+    "beheizt": null
+  },
+  "dach": {
+    "photovoltaik_vorhanden": null,
+    "groesse": null
+  },
+  "e_mobilitaet": {
+    "elektroauto_besitz": null,
+    "wallbox_installation": null
+  },
+  "wohnflaeche_qm": null,
+  "sanierung": {
+    "bereits_durchgefuehrt": null,
+    "beschreibung_bereits": null,
+    "geplant": null,
+    "beschreibung_geplant": null
+  },
+  "nutzungsverhalten": {
+    "praeferenzen": null,
+    "personen_im_haushalt": null
+  },
+  "planung_und_budget": {
+    "zeitrahmen": null,
+    "budget": null
+  }
+}
