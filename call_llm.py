@@ -10,7 +10,7 @@ def call_llm( content: str, model: str = "openai/gpt-4o", role: str = "user") ->
   response = requests.post(
     url="https://openrouter.ai/api/v1/chat/completions",
     headers={
-      "Authorization": "Bearer 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",
+      "Authorization": "Bearer ",
       "HTTP-Referer": "<YOUR_SITE_URL>", # Optional. Site URL for rankings on openrouter.ai.
       "X-Title": "<YOUR_SITE_NAME>", # Optional. Site title for rankings on openrouter.ai.
     },
