@@ -42,11 +42,18 @@ export default function Home() {
 	const fade = { hidden: { opacity: 0 }, show: { opacity: 1 } };
 
 	return (
-		<main className="flex min-h-screen flex-col items-center justify-center bg-[#fafbfa]">
+		<main className="bg-background flex min-h-screen flex-col items-center justify-center">
 			<div style={{ maxWidth: '60ch' }}>
 				<AnimatePresence mode="wait">
 					{step === 'intro' ? (
-						<motion.div key="intro" variants={fade} initial="hidden" animate="show" exit="hidden">
+						<motion.div
+							key="intro"
+							variants={fade}
+							initial="hidden"
+							animate="show"
+							exit="hidden"
+							className="w-full"
+						>
 							<AnimatedStack identity="intro">
 								<Image
 									src="/home.png"
@@ -56,8 +63,8 @@ export default function Home() {
 									priority
 									className="select-none"
 								/>
-								<TypewriterText text="Homely helps you instantly ⚡️ save energy, 📊 cut costs, and 💶 unlock subsidies." />
-								<Button className="mt-6 px-8 py-4 text-lg" onClick={() => setStep('questions')}>
+								<TypewriterText text="Homely helps you instantly ⚡️ save energy, 📊 cut costs, and 💶 unlock subsidies." />
+								<Button variant="primary" onClick={() => setStep('questions')}>
 									Get started
 								</Button>
 							</AnimatedStack>
@@ -71,12 +78,7 @@ export default function Home() {
 							exit="hidden"
 							className="px-4"
 						>
-							<QuestionStack
-								sectionTitle={section.title}
-								question={question}
-								onChoice={next}
-								newSection={questionIdx === 0}
-							/>
+							<QuestionStack question={question} onChoice={next} />
 						</motion.div>
 					) : (
 						<motion.div

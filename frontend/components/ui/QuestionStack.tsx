@@ -2,7 +2,6 @@
 import AnimatedStack from '@/components/ui/AnimatedStack';
 import ChoiceGrid from '@/components/ui/ChoiceGrid';
 import TypewriterText from '@/components/ui/TypewriterText';
-import { motion } from 'motion/react';
 
 interface Question {
 	id: string;
@@ -11,18 +10,11 @@ interface Question {
 }
 
 interface QuestionStackProps {
-	sectionTitle: string;
 	question: Question;
 	onChoice: (c: string) => void;
-	newSection: boolean;
 }
 
-export default function QuestionStack({
-	sectionTitle,
-	question,
-	onChoice,
-	newSection,
-}: QuestionStackProps) {
+export default function QuestionStack({ question, onChoice }: QuestionStackProps) {
 	return (
 		<>
 			<AnimatedStack identity={question.id}>

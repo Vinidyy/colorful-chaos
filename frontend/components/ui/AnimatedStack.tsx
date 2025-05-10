@@ -37,10 +37,10 @@ export default function AnimatedStack({
 				initial="hidden"
 				animate="show"
 				exit="hidden"
-				className="flex flex-col items-center gap-6"
+				className="flex w-full flex-col items-center gap-6"
 			>
 				{items.map((child, i) => (
-					<motion.div key={i} variants={item}>
+					<motion.div key={i} variants={item} className="max-w-full">
 						{child}
 					</motion.div>
 				))}
