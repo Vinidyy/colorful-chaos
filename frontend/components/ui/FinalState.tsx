@@ -2,29 +2,9 @@ import { useEffect, useState } from 'react';
 import TypewriterText from '@/components/ui/TypewriterText';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'motion/react';
+import type { ReportData } from '@/types/report';
 
-interface Suggestion {
-	title: string;
-	cost: string;
-	icon: string;
-}
-
-interface Subsidy {
-	program: string;
-	amount: string;
-	description: string;
-}
-
-interface LegalImplication {
-	title: string;
-	description: string;
-}
-
-interface FinalStateProps {
-	suggestions: Suggestion[];
-	subsidies: Subsidy[];
-	legalImplications: LegalImplication[];
-}
+type FinalStateProps = ReportData;
 
 export function FinalState({ suggestions, subsidies, legalImplications }: FinalStateProps) {
 	const [currentStep, setCurrentStep] = useState(0);

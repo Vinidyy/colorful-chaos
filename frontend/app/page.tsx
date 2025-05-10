@@ -1,19 +1,22 @@
 'use client';
-import { useState, useEffect } from 'react';
+
+import { useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import HomeModelCanvas from '@/components/ui/HomeModelCanvas';
 import QuestionStack from '@/components/ui/QuestionStack';
-import AnimatedStack from '@/components/ui/AnimatedStack';
-import { Button } from '@/components/ui/button';
-import questionsData from './questions.json';
 import TypewriterText from '@/components/ui/TypewriterText';
+import { Button } from '@/components/ui/button';
+import AnimatedStack from '@/components/ui/AnimatedStack';
 import { FinalState } from '@/components/ui/FinalState';
+import questionsData from './questions.json';
+import { fetchReportFromAnswers } from './actions';
 
 interface Question {
 	id: string;
 	text: string;
 	choices: string[];
 }
+
 interface Section {
 	id: string;
 	title: string;
@@ -68,47 +71,26 @@ export default function Home() {
 			setStep('done');
 			// Use setTimeout to ensure the state changes are applied before fetching
 			setTimeout(() => {
-				fetchReport();
+				handleFetchReport();
 			}, 10);
 		}
 	}
 
-	async function fetchReport() {
-		// Loading state is already set in the next() function
+	async function handleFetchReport() {
 		try {
-			// Format the answers into a single question string for the API
-			const formattedAnswers = answers
-				.flatMap((section) =>
-					section.questions
-						.filter((q) => q.answer) // Only include answered questions
-						.map((q) => `Question ${section.id}${q.id}: ${q.answer}`)
-				)
-				.join('\n');
+			setError(null);
+			setReportData(null);
+			setLoading(true);
+			const { data, error: fetchError } = await fetchReportFromAnswers(answers);
 
-			// Call the API with the formatted answers
-			const response = await fetch('http://192.168.1.158:8000/chat/json', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify({
-					question: formattedAnswers,
-				}),
-			});
-
-			if (!response.ok) {
-				throw new Error(`API call failed with status: ${response.status}`);
+			if (fetchError || !data) {
+				setError(fetchError || 'Failed to fetch report data');
+			} else {
+				setReportData(data);
 			}
-
-			const data = await response.json();
-			const parsed = typeof data.answer === 'string' ? JSON.parse(data.answer) : data.answer;
-			setReportData(parsed);
-			console.log('parsed', parsed);
-			setStep('done');
 		} catch (error) {
-			console.error('Error fetching report:', error);
-			setError('Failed to fetch report. Please try again.');
-			setStep('done');
+			console.error('Error handling report:', error);
+			setError('Failed to process report data');
 		} finally {
 			setLoading(false);
 		}
@@ -131,7 +113,10 @@ export default function Home() {
 						>
 							<AnimatedStack identity="intro">
 								<HomeModelCanvas />
-								<TypewriterText text="Homely helps you instantly ⚡️ save energy, 📊 cut costs, and 💶 unlock subsidies." />
+								<TypewriterText
+									text="Homely helps you instantly save energy, cut costs, and unlock subsidies."
+									className="text-4xl"
+								/>
 								<Button variant="primary" onClick={() => setStep('questions')}>
 									Get started
 								</Button>
@@ -144,52 +129,49 @@ export default function Home() {
 							initial="hidden"
 							animate="show"
 							exit="hidden"
-							className="px-4"
+							className="w-full"
 						>
 							<QuestionStack question={question} onChoice={recordAnswer} />
 						</motion.div>
 					) : (
-						(console.log('render FinalState with', reportData),
-						(
-							<motion.div
-								key="done"
-								variants={fade}
-								initial="hidden"
-								animate="show"
-								exit="hidden"
-								className="py-12"
-							>
-								{loading ? (
-									<div className="text-center">
-										<p className="text-xl">Generating your personalized report...</p>
-									</div>
-								) : error ? (
-									<div className="text-center">
-										<p className="text-xl text-red-500">{error}</p>
-										<button
-											className="bg-primary mt-4 rounded-md px-4 py-2 text-white"
-											onClick={() => fetchReport()}
-										>
-											Try Again
-										</button>
-									</div>
-								) : reportData ? (
-									<FinalState {...reportData} />
-								) : (
-									<div className="text-center">
-										<p className="text-xl text-red-500">
-											Unable to load report data. Please try again.
-										</p>
-										<button
-											className="bg-primary mt-4 rounded-md px-4 py-2 text-white"
-											onClick={() => fetchReport()}
-										>
-											Try Again
-										</button>
-									</div>
-								)}
-							</motion.div>
-						))
+						<motion.div
+							key="done"
+							variants={fade}
+							initial="hidden"
+							animate="show"
+							exit="hidden"
+							className="py-12"
+						>
+							{loading ? (
+								<div className="text-center">
+									<p className="text-xl">Generating your personalized report...</p>
+								</div>
+							) : error ? (
+								<div className="text-center">
+									<p className="text-xl text-red-500">{error}</p>
+									<button
+										className="bg-primary mt-4 rounded-md px-4 py-2 text-white"
+										onClick={() => handleFetchReport()}
+									>
+										Try Again
+									</button>
+								</div>
+							) : reportData ? (
+								<FinalState {...reportData} />
+							) : (
+								<div className="text-center">
+									<p className="text-xl text-red-500">
+										Unable to load report data. Please try again.
+									</p>
+									<button
+										className="bg-primary mt-4 rounded-md px-4 py-2 text-white"
+										onClick={() => handleFetchReport()}
+									>
+										Try Again
+									</button>
+								</div>
+							)}
+						</motion.div>
 					)}
 				</AnimatePresence>
 			</div>
