@@ -1,0 +1,154 @@
+{
+	"sections": [
+		{
+			"id": "A",
+			"title": "Great. Let's go through all the details together. First, tell me about your home.",
+			"questions": [
+				{
+					"id": "1",
+					"text": "Do you own and live in the home?",
+					"choices": [
+						"Yes, owner-occupier",
+						"Yes, but I rent it out",
+						"I’m a tenant",
+						"I’m about to buy / inherit"
+					]
+				},
+				{
+					"id": "2",
+					"text": "Which type best describes the building?",
+					"choices": [
+						"Detached / single-family",
+						"Semi / row house",
+						"Apartment in multi-family",
+						"Other"
+					]
+				},
+				{
+					"id": "3",
+					"text": "About when was it built?",
+					"choices": [
+						"Before 1978",
+						"1978–1995",
+						"1996–2009",
+						"2010–2020",
+						"After 2020",
+						"Not sure"
+					]
+				},
+				{
+					"id": "4",
+					"text": "Approximate living area?",
+					"choices": ["< 50 m²", "50–100 m²", "100–150 m²", "150–250 m²", "> 250 m²", "Not sure"]
+				}
+			]
+		},
+		{
+			"id": "B",
+			"title": "Up next, let's have a look at your heating.",
+			"questions": [
+				{
+					"id": "5",
+					"text": "What heats your home today?",
+					"choices": [
+						"Gas boiler",
+						"Oil boiler",
+						"District heat",
+						"Heat pump",
+						"Wood / pellets",
+						"Electric night-storage / direct",
+						"Other / don’t know"
+					]
+				},
+				{
+					"id": "6",
+					"text": "How old is that system (roughly)?",
+					"choices": ["> 30 years", "20–30 y", "10–20 y", "< 10 y", "Not sure"]
+				},
+				{
+					"id": "7",
+					"text": "Any plans or problems with the heater?",
+					"choices": [
+						"Works but expensive",
+						"Planning to replace soon",
+						"Just exploring",
+						"Recently replaced / fine"
+					]
+				}
+			]
+		},
+		{
+			"id": "C",
+			"title": "Cool. Let's now figure out your building envelope. We're almost done.",
+			"questions": [
+				{
+					"id": "8",
+					"text": "Exterior walls insulation?",
+					"choices": ["None / original", "Some retrofit", "Well insulated (modern)", "Not sure"]
+				},
+				{
+					"id": "9",
+					"text": "Roof / top-floor insulation?",
+					"choices": ["None / thin", "Some", "Well insulated", "Flat roof / N/A", "Not sure"]
+				},
+				{
+					"id": "10",
+					"text": "Basement ceiling under living area?",
+					"choices": ["Uninsulated", "Already insulated", "No basement / slab", "Not sure"]
+				},
+				{
+					"id": "11",
+					"text": "Windows age & glazing?",
+					"choices": [
+						"Single-glazed / pre-1990",
+						"Double-glazed 90s",
+						"Modern double / triple",
+						"Mixed",
+						"Not sure"
+					]
+				}
+			]
+		},
+		{
+			"id": "D",
+			"title": "Alright, last section. What is your renewable energy situation?",
+			"questions": [
+				{
+					"id": "12",
+					"text": "Solar panels (PV)?",
+					"choices": [
+						"Already installed",
+						"No—but interested",
+						"No—not interested / roof unsuitable"
+					]
+				},
+				{
+					"id": "13",
+					"text": "Hot-water source?",
+					"choices": [
+						"Same boiler",
+						"Electric boiler / instant",
+						"Solar-thermal panels",
+						"Not sure"
+					]
+				},
+				{
+					"id": "14",
+					"text": "Ventilation situation?",
+					"choices": [
+						"No mech. ventilation",
+						"Heat-recovery system present",
+						"Some fans / extractors",
+						"Problems with damp / mold",
+						"Not sure"
+					]
+				},
+				{
+					"id": "15",
+					"text": "Electric car now or planned?",
+					"choices": ["Already have EV", "Planning to buy", "No plans"]
+				}
+			]
+		}
+	]
+}
