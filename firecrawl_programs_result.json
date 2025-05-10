@@ -1,0 +1,223 @@
+{
+  "id": null,
+  "status": "completed",
+  "expiresAt": "2025-05-10 21:46:26+00:00",
+  "success": true,
+  "data": {
+    "programs": [
+      {
+        "website": "https://www.kfw.de/inlandsfoerderung/Privatpersonen/Bestehende-Immobilie/Energieeffizient-sanieren/",
+        "deadline": "",
+        "eligibility": "Privatpersonen für die energieeffiziente Sanierung bestehender Immobilien",
+        "program_name": "Energieeffiziente Sanierung",
+        "funding_percentage": ""
+      },
+      {
+        "website": "https://www.kfw.de/inlandsfoerderung/Privatpersonen/Bestehende-Immobilie/Energieeffizient-sanieren/",
+        "deadline": "",
+        "eligibility": "",
+        "program_name": "Energieeffiziente Sanierung",
+        "funding_percentage": ""
+      },
+      {
+        "website": "https://www.kfw.de/inlandsfoerderung/Privatpersonen/Neubau/",
+        "deadline": "",
+        "eligibility": "",
+        "program_name": "Neubau",
+        "funding_percentage": ""
+      },
+      {
+        "website": "https://www.kfw.de/inlandsfoerderung/Privatpersonen/Bestandsimmobilie/Smart-Home/",
+        "deadline": "",
+        "eligibility": "",
+        "program_name": "Smart Home",
+        "funding_percentage": ""
+      },
+      {
+        "website": "https://www.kfw.de/inlandsfoerderung/Privatpersonen/Bestehende-Immobilie/Energieeffizient-sanieren/",
+        "deadline": "",
+        "eligibility": "Privatpersonen für bestehende Immobilien",
+        "program_name": "Energieeffiziente Sanierung",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Bund/BMWi/energieberatung-fuer-wohngebaude.html",
+        "deadline": "",
+        "eligibility": "Private individuals for energy consulting on residential buildings, including energy efficiency and renewable energy.",
+        "program_name": "Energieberatung für Wohngebäude",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Land/Berlin/effiziente-gebaeude-plus.html",
+        "deadline": "",
+        "eligibility": "Private individuals for energy efficiency and renewable energy in buildings, plus digitalization and modernization.",
+        "program_name": "Effiziente GebäudePLUS",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Land/Berlin/energieberatung-fuer-effizienz-und-optimierung.html",
+        "deadline": "",
+        "eligibility": "Private individuals for consulting on energy efficiency and optimization, including renewable energy.",
+        "program_name": "Energieberatung für Effizienz und Optimierung (ENEO)",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Bund/BMWi/bundesfoerderung-effiziente-gebaeude-em.html",
+        "deadline": "",
+        "eligibility": "Private individuals for individual measures promoting energy efficiency and renewable energy in buildings.",
+        "program_name": "Bundesförderung für effiziente Gebäude – Einzelmaßnahmen (BEG EM)",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Bund/BMWSB/klimafreundlicher-neubau-niedrigpreis-wohn.html",
+        "deadline": "",
+        "eligibility": "Private individuals for climate-friendly new construction of low-price residential buildings (energy efficiency and renewable energy).",
+        "program_name": "Bundesförderung – Klimafreundlicher Neubau im Niedrigpreissegment – Wohngebäude",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Bund/BMWSB/jung-kauft-alt.html",
+        "deadline": "",
+        "eligibility": "Private individuals (families) for acquiring and renovating old properties, including energy efficiency and renewable energy measures.",
+        "program_name": "Bundesförderung Wohneigentum für Familien (Bestandsförderung) „Jung kauft alt“",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Bund/BMWi/bundesfoerderung-effiziente-wohngebaeude.html",
+        "deadline": "",
+        "eligibility": "Private individuals for energy efficient residential buildings (new construction and renovation), including energy efficiency and renewable energy.",
+        "program_name": "Bundesförderung für effiziente Gebäude – Wohngebäude (BEG WG)",
+        "funding_percentage": ""
+      },
+      {
+        "website": "https://www.bafa.de/DE/Energie/Energieberatung/Energieberatung_Wohngebaeude/energieberatung_wohngebaeude_node.html",
+        "deadline": "31. Dezember 2026",
+        "eligibility": "Eigentümer (selbstgenutzt/vermietet), WEG, Nießbrauchsberechtigte, Mieter/Pächter (mit Erlaubnis Eigentümer). Wohngebäude in Deutschland, Bauantrag mind. 10 Jahre alt. Energieberatung durch qualifizierten, auf www.energie-effizienz-experten.de gelisteten Berater.",
+        "program_name": "Energieberatung für Wohngebäude",
+        "funding_percentage": "50% des förderfähigen Beratungshonorars. Maximal EUR 650 für Ein- und Zweifamilienhäuser, maximal EUR 850 für Wohngebäude mit 3 oder mehr Wohneinheiten. Zusätzlich maximal EUR 250 für Erläuterung des Berichts bei Eigentümerversammlungen (WEG)."
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Bund/BMWi/energieberatung-fuer-wohngebaude.html",
+        "deadline": "",
+        "eligibility": "Verband/Vereinigung, Privatperson, Unternehmen",
+        "program_name": "Energieberatung für Wohngebäude",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Land/Berlin/effiziente-gebaeude-plus.html",
+        "deadline": "",
+        "eligibility": "Kommune, Öffentliche Einrichtung, Privatperson, Unternehmen, Verband/Vereinigung",
+        "program_name": "Effiziente GebäudePLUS",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Land/Berlin/energieberatung-fuer-effizienz-und-optimierung.html",
+        "deadline": "",
+        "eligibility": "Unternehmen, Privatperson, Verband/Vereinigung",
+        "program_name": "Energieberatung für Effizienz und Optimierung (ENEO)",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Bund/BMWi/bundesfoerderung-effiziente-gebaeude-em.html",
+        "deadline": "",
+        "eligibility": "Kommune, Öffentliche Einrichtung, Privatperson, Unternehmen, Verband/Vereinigung",
+        "program_name": "Bundesförderung für effiziente Gebäude – Einzelmaßnahmen (BEG EM)",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Bund/BMWSB/klimafreundlicher-neubau-niedrigpreis-wohn.html",
+        "deadline": "",
+        "eligibility": "Privatperson, Unternehmen, Öffentliche Einrichtung, Verband/Vereinigung",
+        "program_name": "Bundesförderung – Klimafreundlicher Neubau im Niedrigpreissegment – Wohngebäude",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Bund/BMWSB/jung-kauft-alt.html",
+        "deadline": "",
+        "eligibility": "Privatperson",
+        "program_name": "Bundesförderung Wohneigentum für Familien (Bestandsförderung) „Jung kauft alt“",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Bund/BMWi/bundesfoerderung-effiziente-wohngebaeude.html",
+        "deadline": "",
+        "eligibility": "Öffentliche Einrichtung, Privatperson, Unternehmen, Verband/Vereinigung",
+        "program_name": "Bundesförderung für effiziente Gebäude – Wohngebäude (BEG WG)",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Bund/BMWi/energieberatung-fuer-wohngebaude.html",
+        "deadline": "",
+        "eligibility": "Privatperson, Verband/Vereinigung, Unternehmen",
+        "program_name": "Energieberatung für Wohngebäude",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Land/Berlin/effiziente-gebaeude-plus.html",
+        "deadline": "",
+        "eligibility": "Privatperson, Kommune, Öffentliche Einrichtung, Unternehmen, Verband/Vereinigung",
+        "program_name": "Effiziente GebäudePLUS",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Land/Berlin/energieberatung-fuer-effizienz-und-optimierung.html",
+        "deadline": "",
+        "eligibility": "Privatperson, Unternehmen, Verband/Vereinigung",
+        "program_name": "Energieberatung für Effizienz und Optimierung (ENEO)",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Bund/BMWi/bundesfoerderung-effiziente-gebaeude-em.html",
+        "deadline": "",
+        "eligibility": "Privatperson, Kommune, Öffentliche Einrichtung, Unternehmen, Verband/Vereinigung",
+        "program_name": "Bundesförderung für effiziente Gebäude – Einzelmaßnahmen (BEG EM)",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Bund/BMWi/bundesfoerderung-effiziente-wohngebaeude.html",
+        "deadline": "",
+        "eligibility": "Privatperson, Öffentliche Einrichtung, Unternehmen, Verband/Vereinigung",
+        "program_name": "Bundesförderung für effiziente Gebäude – Wohngebäude (BEG WG)",
+        "funding_percentage": ""
+      },
+      {
+        "website": "https://www.eneo-berlin.de/",
+        "deadline": "",
+        "eligibility": "Owners of self-used or rented residential properties in Berlin. Building must be in Berlin. Implementation of recommended measures must start within 12 months of funding approval. Max 3 projects per property owner per year.",
+        "program_name": "Energieberatung für Effizienz und Optimierung (ENEO)",
+        "funding_percentage": "Up to 100% of net costs for the energy assessment (grant of EUR 500-2,000 depending on housing units)."
+      },
+      {
+        "website": "Informationen und Antragsstellung über das Bundesamt für Wirtschaft und Ausfuhrkontrolle (BAFA) unter www.bafa.de (zuständig für Zuschüsse für Gebäudehülle, Anlagentechnik außer Heizung, Gebäudenetze, Heizungsoptimierung, Fachplanung/Baubegleitung) und die KfW Bankengruppe (KfW) unter www.kfw.de (zuständig für Zuschüsse für Heizungstechnik und Ergänzungskredite). Spezifische BEG-Links: https://www.bafa.de/beg (BAFA) und https://www.kfw.de/inlandsfoerderung/Heizungsf%C3%B6rderung/?redirect=447233 (KfW).",
+        "deadline": "Die Förderrichtlinie ist gültig bis zum 31. Dezember 2030. Anträge müssen vor Maßnahmenbeginn gestellt werden. Der Klimageschwindigkeits-Bonus (aktuelle Stufe von 20% für Heizungstausch) gilt bis 31. Dezember 2028 und reduziert sich danach schrittweise.",
+        "eligibility": "Privatpersonen (Hauseigentümer, Eigentümer von Eigentumswohnungen), Wohnungseigentümergemeinschaften. Antragsberechtigt sind alle Investoren von förderfähigen Maßnahmen an Wohngebäuden. Für bestimmte Boni (Klimageschwindigkeits-Bonus, Einkommens-Bonus) gelten zusätzliche Bedingungen für selbstnutzende Eigentümer, z.B. Haushaltsjahreseinkommen bis zu EUR 40.000 für den Einkommens-Bonus.",
+        "program_name": "Bundesförderung für effiziente Gebäude – Einzelmaßnahmen (BEG EM)",
+        "funding_percentage": "Basisfördersätze von 15% bis 50% je nach Maßnahme (z.B. 15% für Gebäudehülle, 30% für Heizungstausch, 50% für Fachplanung). Zusätzliche Boni (Klimageschwindigkeits-, Einkommens-, iSFP-, Effizienz-Bonus) können den Fördersatz auf bis zu 70% der förderfähigen Kosten erhöhen. Ein Emissionsminderungs-Zuschlag von 2.500 EUR ist für Biomasseanlagen möglich."
+      },
+      {
+        "website": "https://www.kfw.de/inlandsfoerderung/Privatpersonen/Neubau/F%C3%B6rderprodukte/Klimafreundlicher-Neubau-im-Niedrigpreissegment-(296)/",
+        "deadline": "",
+        "eligibility": "Privatperson",
+        "program_name": "Bundesförderung – Klimafreundlicher Neubau im Niedrigpreissegment – Wohngebäude",
+        "funding_percentage": ""
+      },
+      {
+        "website": "https://www.kfw.de/inlandsfoerderung/Privatpersonen/Bestehende-Immobilie/F%C3%B6rderprodukte/Wohneigentum-f%C3%BCr-Familien-Bestandserwerb-(308)/",
+        "deadline": "",
+        "eligibility": "Privatperson",
+        "program_name": "Bundesförderung Wohneigentum für Familien (Bestandsförderung) „Jung kauft alt“",
+        "funding_percentage": "Darlehen"
+      },
+      {
+        "website": "https://www.kfw.de/inlandsfoerderung/Privatpersonen/Bestehende-Immobilie/F%C3%B6rderprodukte/Bundesf%C3%B6rderung-f%C3%BCr-effiziente-Geb%C3%A4ude-Wohngeb%C3%A4ude-Kredit-(261-262)/",
+        "deadline": "Applications must be submitted before project start (conclusion of supply/service contracts, or start of construction work if a documented consultation has occurred prior to contract conclusion). The program directive is valid until December 31, 2030.",
+        "eligibility": "Residential homeowners, private individuals, housing owner communities, freelancers, corporations and public law institutions, non-profit organizations including churches, companies (including sole proprietors and municipal companies), other private legal entities including housing cooperatives. Excludes federal government, federal states and their institutions, and political parties.",
+        "program_name": "Bundesförderung für effiziente Gebäude – Wohngebäude (BEG WG) - Kredit (KfW Produkt 261)",
+        "funding_percentage": "Loan with partial debt waiver (Tilgungszuschuss). Base rates for Effizienzhaus levels: Denkmal/85: 5%; 70: 10%; 55: 15%; 40: 20%. Additional bonuses: +5% for EE/NH-Klasse; +10% for Worst Performing Building (WPB); +15% for Serielle Sanierung (SerSan); +20% for combined WPB+SerSan. Specialist planning/supervision & sustainability certification: 50% Tilgungszuschuss."
+      }
+    ]
+  },
+  "error": null,
+  "warning": null,
+  "sources": null
+}
