@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import HomeModelCanvas from '@/components/ui/HomeModelCanvas';
 import QuestionStack from '@/components/ui/QuestionStack';
@@ -21,7 +21,10 @@ interface Section {
 }
 
 export default function Home() {
-	const [step, setStep] = useState<'intro' | 'questions' | 'done'>('done');
+	const [step, setStep] = useState<'intro' | 'questions' | 'done'>('intro');
+	const [reportData, setReportData] = useState<any>(null);
+	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState<string | null>(null);
 	const [sectionIdx, setSectionIdx] = useState(0);
 	const [questionIdx, setQuestionIdx] = useState(0);
 
@@ -60,7 +63,54 @@ export default function Home() {
 			setSectionIdx((s) => s + 1);
 			setQuestionIdx(0);
 		} else {
+			// Set loading state and transition to done state before fetching
+			setLoading(true);
 			setStep('done');
+			// Use setTimeout to ensure the state changes are applied before fetching
+			setTimeout(() => {
+				fetchReport();
+			}, 10);
+		}
+	}
+
+	async function fetchReport() {
+		// Loading state is already set in the next() function
+		try {
+			// Format the answers into a single question string for the API
+			const formattedAnswers = answers
+				.flatMap((section) =>
+					section.questions
+						.filter((q) => q.answer) // Only include answered questions
+						.map((q) => `Question ${section.id}${q.id}: ${q.answer}`)
+				)
+				.join('\n');
+
+			// Call the API with the formatted answers
+			const response = await fetch('http://192.168.1.158:8000/chat/json', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					question: formattedAnswers,
+				}),
+			});
+
+			if (!response.ok) {
+				throw new Error(`API call failed with status: ${response.status}`);
+			}
+
+			const data = await response.json();
+			const parsed = typeof data.answer === 'string' ? JSON.parse(data.answer) : data.answer;
+			setReportData(parsed);
+			console.log('parsed', parsed);
+			setStep('done');
+		} catch (error) {
+			console.error('Error fetching report:', error);
+			setError('Failed to fetch report. Please try again.');
+			setStep('done');
+		} finally {
+			setLoading(false);
 		}
 	}
 
@@ -99,51 +149,47 @@ export default function Home() {
 							<QuestionStack question={question} onChoice={recordAnswer} />
 						</motion.div>
 					) : (
-						<motion.div
-							key="done"
-							variants={fade}
-							initial="hidden"
-							animate="show"
-							exit="hidden"
-							className="py-12"
-						>
-							<FinalState
-								suggestions={[
-									{ title: 'Install Solar Panels', cost: '5,000 - 15,000 EUR', icon: 'solar' },
-									{
-										title: 'Improve Wall Insulation',
-										cost: '1,000 - 4,000 EUR',
-										icon: 'insulation',
-									},
-									{ title: 'Upgrade Heating System', cost: '4,000 - 10,000 EUR', icon: 'radiator' },
-								]}
-								subsidies={[
-									{
-										program: 'Federal Funding for Efficient Buildings (BEG)',
-										amount: 'Up to 20,000 EUR',
-										description: 'Subsidy for energy-efficient renovations and installations.',
-									},
-									{
-										program: 'KfW Energy-efficient Renovation Program',
-										amount: 'Low-interest loans up to 120,000 EUR',
-										description:
-											'Loans for improving energy efficiency and building sustainability.',
-									},
-								]}
-								legalImplications={[
-									{
-										title: 'Compliance with Energy Efficiency Requirements',
-										description:
-											'Ensure your building meets the Niedrigstenergiegebäude (nearly zero-energy building) standards as per § 10.',
-									},
-									{
-										title: 'Adherence to Minimum Thermal Insulation',
-										description:
-											'Follow § 11 for minimum thermal protection to enhance energy efficiency.',
-									},
-								]}
-							/>
-						</motion.div>
+						(console.log('render FinalState with', reportData),
+						(
+							<motion.div
+								key="done"
+								variants={fade}
+								initial="hidden"
+								animate="show"
+								exit="hidden"
+								className="py-12"
+							>
+								{loading ? (
+									<div className="text-center">
+										<p className="text-xl">Generating your personalized report...</p>
+									</div>
+								) : error ? (
+									<div className="text-center">
+										<p className="text-xl text-red-500">{error}</p>
+										<button
+											className="bg-primary mt-4 rounded-md px-4 py-2 text-white"
+											onClick={() => fetchReport()}
+										>
+											Try Again
+										</button>
+									</div>
+								) : reportData ? (
+									<FinalState {...reportData} />
+								) : (
+									<div className="text-center">
+										<p className="text-xl text-red-500">
+											Unable to load report data. Please try again.
+										</p>
+										<button
+											className="bg-primary mt-4 rounded-md px-4 py-2 text-white"
+											onClick={() => fetchReport()}
+										>
+											Try Again
+										</button>
+									</div>
+								)}
+							</motion.div>
+						))
 					)}
 				</AnimatePresence>
 			</div>
