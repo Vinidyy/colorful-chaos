@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
+import TreeLoadingAnimation from '@/components/ui/TreeLoadingAnimation';
 import HomeModelCanvas from '@/components/ui/HomeModelCanvas';
 import QuestionStack from '@/components/ui/QuestionStack';
 import TypewriterText from '@/components/ui/TypewriterText';
@@ -142,35 +143,36 @@ export default function Home() {
 							exit="hidden"
 							className="py-12"
 						>
-							{loading ? (
-								<div className="text-center">
-									<p className="text-xl">Generating your personalized report...</p>
-								</div>
-							) : error ? (
-								<div className="text-center">
-									<p className="text-xl text-red-500">{error}</p>
-									<button
-										className="bg-primary mt-4 rounded-md px-4 py-2 text-white"
-										onClick={() => handleFetchReport()}
-									>
-										Try Again
-									</button>
-								</div>
-							) : reportData ? (
-								<FinalState {...reportData} />
-							) : (
-								<div className="text-center">
-									<p className="text-xl text-red-500">
-										Unable to load report data. Please try again.
-									</p>
-									<button
-										className="bg-primary mt-4 rounded-md px-4 py-2 text-white"
-										onClick={() => handleFetchReport()}
-									>
-										Try Again
-									</button>
-								</div>
-							)}
+							{/* Tree animation is always present but controls its visibility based on loading state */}
+							<TreeLoadingAnimation isLoading={loading} />
+
+							{/* Show content only when not loading */}
+							{!loading &&
+								(error ? (
+									<div className="text-center">
+										<p className="text-xl text-red-500">{error}</p>
+										<button
+											className="bg-primary mt-4 rounded-md px-4 py-2 text-white"
+											onClick={() => handleFetchReport()}
+										>
+											Try Again
+										</button>
+									</div>
+								) : reportData ? (
+									<FinalState {...reportData} />
+								) : (
+									<div className="text-center">
+										<p className="text-xl text-red-500">
+											Unable to load report data. Please try again.
+										</p>
+										<button
+											className="bg-primary mt-4 rounded-md px-4 py-2 text-white"
+											onClick={() => handleFetchReport()}
+										>
+											Try Again
+										</button>
+									</div>
+								))}
 						</motion.div>
 					)}
 				</AnimatePresence>

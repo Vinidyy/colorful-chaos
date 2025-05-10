@@ -11,7 +11,7 @@ const buttonVariants = cva(
 			variant: {
 				default: 'bg-white text-tint hover:scale-105',
 				primary:
-					'bg-tint text-white hover:scale-105 before:inset-0 relative before:absolute overflow-hidden before:bg-[linear-gradient(180deg,rgba(255,255,255,0.10)_0%,rgba(255,255,255,0.00)_100%)] before:background-blend-mode-plus-lighter',
+					'bg-green-700 text-white hover:scale-105 before:inset-0 relative before:absolute overflow-hidden before:bg-[linear-gradient(180deg,rgba(255,255,255,0.10)_0%,rgba(255,255,255,0.00)_100%)] before:background-blend-mode-plus-lighter',
 				destructive:
 					'bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60',
 				outline:
