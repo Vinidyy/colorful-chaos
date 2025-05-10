@@ -2,7 +2,7 @@ import os
 import glob
 from typing import Dict, List, Tuple
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.embeddings import OpenAIEmbeddings
+from langchain_openai import OpenAIEmbeddings
 from dotenv import load_dotenv
 
 
@@ -40,7 +40,9 @@ def split_chunks(
     return chunks
 
 
-load_dotenv()                           # load .env into os.environ
+load_dotenv()# load .env into os.environ
+
+
 def embed_chunks(
     chunks: List[Tuple[str, str]],
     model_name: str = "text-embedding-ada-002"
@@ -52,7 +54,7 @@ def embed_chunks(
     texts = [chunk for _, chunk in chunks]
     # load API key from environment
     openai_key = os.getenv("OPENAI_API_KEY")
-    embedder = OpenAIEmbeddings(model=model_name, api_key=openai_key)
+    embedder = OpenAIEmbeddings(model=model_name, openai_api_key=openai_key)
     vectors = embedder.embed_documents(texts)
     return list(zip([cid for cid, _ in chunks], vectors))
 
