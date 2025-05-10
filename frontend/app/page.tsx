@@ -28,6 +28,30 @@ export default function Home() {
 	const section = sections[sectionIdx];
 	const question = section.questions[questionIdx];
 
+	const [answers, setAnswers] = useState(() =>
+		sections.map((section) => ({
+			id: section.id,
+			questions: section.questions.map((q) => ({
+				id: q.id,
+				answer: undefined as string | undefined,
+			})),
+		}))
+	);
+
+	function recordAnswer(answer: string) {
+		setAnswers((prev) =>
+			prev.map((s, si) =>
+				si === sectionIdx
+					? {
+							...s,
+							questions: s.questions.map((q, qi) => (qi === questionIdx ? { ...q, answer } : q)),
+						}
+					: s
+			)
+		);
+		next();
+	}
+
 	function next() {
 		if (questionIdx < section.questions.length - 1) {
 			setQuestionIdx((q) => q + 1);
@@ -78,7 +102,7 @@ export default function Home() {
 							exit="hidden"
 							className="px-4"
 						>
-							<QuestionStack question={question} onChoice={next} />
+							<QuestionStack question={question} onChoice={recordAnswer} />
 						</motion.div>
 					) : (
 						<motion.div
@@ -90,10 +114,7 @@ export default function Home() {
 							className="flex flex-col items-center justify-center py-24"
 						>
 							<h2 className="mb-4 text-2xl font-semibold">All done!</h2>
-							<p className="text-center text-lg opacity-50">
-								Thank you for answering the questions. Your personalized energy advice is being
-								prepared.
-							</p>
+							<p className="text-center text-lg opacity-50">{JSON.stringify(answers)}</p>
 						</motion.div>
 					)}
 				</AnimatePresence>
