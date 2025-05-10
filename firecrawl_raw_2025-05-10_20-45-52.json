@@ -1,0 +1,90 @@
+{
+  "id": null,
+  "status": "completed",
+  "expiresAt": "2025-05-11T00:45:51Z",
+  "success": true,
+  "data": {
+    "programs": [
+      {
+        "website": "https://www.bafa.de/SharedDocs/Downloads/DE/Energie/beg_infoblatt_foerderfaehige_kosten.pdf?__blob=publicationFile&v=7",
+        "deadline": "Applications must adhere to the current version of the guidelines and this information sheet at the time of submission. This information sheet (Version 9.0) is effective from 01.01.2024. No fixed overall program end date is mentioned in this document.",
+        "eligibility": "Homeowners of existing residential buildings undertaking individual energy efficiency measures. This includes measures on the building envelope (e.g., insulation, windows, doors), ventilation systems, 'Efficiency Smart Home' systems, heating system replacement or optimization, and connection to heating networks. Eligible buildings include primary residences and holiday/weekend homes predominantly used for residential purposes and covered by the GEG (Building Energy Act).",
+        "program_name": "Bundesförderung für effiziente Gebäude – Einzelmaßnahmen (BEG EM)",
+        "funding_percentage": "Funding is provided as grants (Zuschüsse) administered by BAFA for most measures, or as low-interest loans with redemption subsidies (zinsgünstige Kredite mit Tilgungszuschüssen) administered by KfW for certain heating measures. Specific funding rates and maximum eligible costs vary by measure and are detailed in the BEG EM funding guidelines and technical minimum requirements. This document details eligible costs and measures."
+      },
+      {
+        "website": "https://www.bafa.de/SharedDocs/Downloads/DE/Energie/beg_infoblatt_foerderfaehige_kosten.pdf?__blob=publicationFile&v=7",
+        "deadline": "Applications must adhere to the current version of the guidelines and this information sheet at the time of submission. This information sheet (Version 9.0) is effective from 01.01.2024. No fixed overall program end date is mentioned in this document.",
+        "eligibility": "Homeowners renovating an existing residential building to achieve an \"Effizienzhaus\" (efficiency house) standard. Eligible buildings include primary residences and holiday/weekend homes predominantly used for residential purposes and covered by the GEG (Building Energy Act).",
+        "program_name": "Bundesförderung für effiziente Gebäude – Wohngebäude (BEG WG)",
+        "funding_percentage": "Funding is provided as grants (Zuschüsse, typically for municipal applicants via KfW) or low-interest loans with redemption subsidies (zinsgünstige Kredite mit Tilgungszuschüssen via KfW). Specific funding rates and maximum eligible costs vary based on the achieved Effizienzhaus level (e.g., EE-Klasse, NH-Klasse) and are detailed in the BEG WG funding guidelines and technical minimum requirements. This document details eligible costs and measures."
+      },
+      {
+        "website": "https://www.bafa.de/SharedDocs/Downloads/DE/Energie/beg_infoblatt_foerderfaehige_kosten.pdf?__blob=publicationFile&v=7",
+        "deadline": "Applications must adhere to the current version of the guidelines and this information sheet at the time of submission. This information sheet (Version 9.0) is effective from 01.01.2024. No fixed overall program end date is mentioned in this document.",
+        "eligibility": "Homeowners installing or extending biomass heating systems (minimum 5 kW nominal heat output) as part of the BEG EM program, provided the system demonstrably meets a dust emission limit of 2.5 mg/m³.",
+        "program_name": "Zuschlag für emissionsarme Biomasseanlagen (im Rahmen der BEG EM)",
+        "funding_percentage": "A surcharge of €2,500. This is granted independently of the maximum limit of eligible expenses for the main measure."
+      },
+      {
+        "website": "https://www.bafa.de/SharedDocs/Downloads/DE/Energie/beg_infoblatt_foerderfaehige_kosten.pdf?__blob=publicationFile&v=7",
+        "deadline": "Applications must adhere to the current version of the guidelines and this information sheet at the time of submission. This information sheet (Version 9.0) is effective from 01.01.2024. No fixed overall program end date is mentioned in this document.",
+        "eligibility": "Owner-occupiers of residential units replacing functional oil, coal, gas-storey, or night storage heaters, or functional gas or biomass heaters (if commissioned at least 20 years ago) with eligible renewable heating systems under the BEG EM program. Specific conditions apply, including requirements for combination with solar thermal or PV for biomass heating, and no continued use of fossil fuel heating for the supplied units.",
+        "program_name": "Klimageschwindigkeits-Bonus (im Rahmen der BEG EM)",
+        "funding_percentage": "A bonus is granted for the self-used residential unit. The specific percentage or amount of the bonus is not detailed in this document but is specified in the BEG EM funding guidelines."
+      },
+      {
+        "website": "https://www.bafa.de/SharedDocs/Downloads/DE/Energie/beg_infoblatt_foerderfaehige_kosten.pdf?__blob=publicationFile&v=7",
+        "deadline": "Applications must adhere to the current version of the guidelines and this information sheet at the time of submission. This information sheet (Version 9.0) is effective from 01.01.2024. No fixed overall program end date is mentioned in this document.",
+        "eligibility": "Homeowners renovating a residential building to an Effizienzhaus standard under the BEG WG program, using serially prefabricated facade and/or roof elements based on a digital 3D survey, and meeting other specific technical requirements for the elements and their installation.",
+        "program_name": "Förderbonus für Serielles Sanieren (im Rahmen der BEG WG)",
+        "funding_percentage": "A funding bonus is available. The specific percentage or amount of the bonus is not detailed in this document but is specified in the BEG WG funding guidelines."
+      },
+      {
+        "website": "https://www.bafa.de/SharedDocs/Downloads/DE/Energie/beg_infoblatt_foerderfaehige_kosten.pdf?__blob=publicationFile&v=7",
+        "deadline": "Applications must adhere to the current version of the guidelines and this information sheet at the time of submission. This information sheet (Version 9.0) is effective from 01.01.2024. No fixed overall program end date is mentioned in this document.",
+        "eligibility": "Homeowners undertaking eligible measures under BEG EM or BEG WG who engage independent, listed energy efficiency experts for specialized planning and construction supervision services related to the energy efficiency measures. Also covers costs for sustainability certification consulting if an NH-class (Nachhaltigkeits-Klasse) is pursued.",
+        "program_name": "Förderung für Fachplanung und Baubegleitung (BEG)",
+        "funding_percentage": "Costs for these expert services are eligible for funding. Specific funding rates or amounts are linked to the main funded measure or provided as a separate component, detailed in the respective BEG funding guidelines. For certain heating exchange measures via KfW, these costs are funded at the rate of the main measure."
+      },
+      {
+        "website": "https://www.badenova.de/privatkunden/heizung/foerderung/",
+        "deadline": "Programmrichtlinie gültig seit 01.01.2024. Klimageschwindigkeits-Bonus (bis zu 20%) für Maßnahmen bis 31.12.2028, danach jährliche Reduktion um 3%. Anträge müssen vor Maßnahmenbeginn gestellt werden.",
+        "eligibility": "Private Eigentümer von selbstgenutzten oder vermieteten Wohnimmobilien (Ein-/Mehrfamilienhäuser, Eigentumswohnungen) und Wohnungseigentümergemeinschaften (WEG) in Deutschland. Für den Einbau in Bestandsgebäuden. Erfordert Steigerung der Energieeffizienz und/oder des Anteils erneuerbarer Energien sowie Optimierung des gesamten Heizungsverteilungssystems.",
+        "program_name": "Bundesförderung für effiziente Gebäude (BEG) - Heizungsförderung",
+        "funding_percentage": "Grundförderung 30% für erneuerbare Heizungen (z.B. Wärmepumpen, Biomasseheizungen). Diverse Boni (Effizienz-Bonus 5% für Wärmepumpen, Klimageschwindigkeits-Bonus 20% bis 2028, Einkommens-Bonus 30% für Haushaltseinkommen ≤ 40.000€/Jahr) können die Förderung auf bis zu 70% der förderfähigen Kosten (max. 30.000€ für die erste Wohneinheit) erhöhen. Zusätzlich ist ein Emissionsminderungs-Zuschlag von 2.500€ für Biomasseheizungen möglich."
+      },
+      {
+        "website": "https://www.bafa.de/DE/Energie/Energieberatung/Energieberatung_Wohngebaeude/energieberatung_wohngebaeude_node.html",
+        "deadline": "",
+        "eligibility": "Eigentümer von Wohngebäuden",
+        "program_name": "Energieberatung für Wohngebäude",
+        "funding_percentage": "bis zu 50 Prozent der Kosten"
+      },
+      {
+        "website": "https://www.energiewechsel.de/KAENEF/Redaktion/DE/Foerderprogramme/B-bauen-sanieren-beg-fachplanung-baubegleitung.html",
+        "deadline": "",
+        "eligibility": "Bauherren und Sanierer von Wohngebäuden",
+        "program_name": "Bundesförderung für effiziente Gebäude (BEG) - Fachplanung und Baubegleitung",
+        "funding_percentage": "Zuschuss von bis zu 50 Prozent der Kosten"
+      },
+      {
+        "website": "https://www.foerderdatenbank.de/FDB/Content/DE/Foerderprogramm/Bund/BMWi/bundesfoerderung-effiziente-gebaeude-em.html",
+        "deadline": "The program is active from January 1, 2024, to December 31, 2030. The Climate Speed Bonus (Klimageschwindigkeits-Bonus) has declining rates and ends by January 1, 2037.",
+        "eligibility": "All investors in eligible measures for existing residential and non-residential buildings, including private individuals (Privatpersonen), homeowners (Hauseigentümer), and homeowner associations (Wohnungseigentümergemeinschaften). Specific bonuses like the Climate Speed Bonus and Income Bonus are available for self-occupying homeowners of residential units.",
+        "program_name": "Bundesförderung für effiziente Gebäude – Einzelmaßnahmen (BEG EM)",
+        "funding_percentage": "Grant funding up to 70% of eligible costs. Base grant rates are 15% (e.g., for building envelope improvements, non-heating system technology, efficiency-improving heating optimization), 30% (e.g., for solar thermal systems, biomass heaters, heat pumps, fuel cell heating, hydrogen-ready heaters, innovative heating technology, connection to building or heating networks), or 50% (e.g., for emission reduction measures for biomass heating, expert planning and construction supervision). Various bonuses can increase the funding rate, such as: Climate Speed Bonus (up to 20 percentage points for replacing old fossil fuel heating, for self-occupying homeowners, rate declines over time), Income Bonus (30 percentage points for self-occupying homeowners with an annual taxable household income of up to €40,000), iSFP Bonus (5 percentage points for measures part of an individual renovation roadmap), Heat Pump Bonus (5 percentage points for using water, ground, or wastewater as a heat source, or for using natural refrigerants). An additional flat sum of €2,500 is available for biomass systems meeting a stringent dust emission limit. Supplementary low-interest loans are also available for homeowners with a household income up to €90,000."
+      },
+      {
+        "website": "https://www.foerderdatenbank.de/FDB/Content/DE/Foerderprogramm/Bund/BMWi/bundesfoerderung-effiziente-gebaeude-em.html",
+        "deadline": "Program runs until December 31, 2030. Applications must be submitted before project start. The Climate Speed Bonus rate, part of the heating system funding, decreases over time (e.g., 20% until December 31, 2028).",
+        "eligibility": "Residential homeowners (Hauseigentümer), condominium owners' associations (WEG). Owner-occupiers are eligible for specific bonuses like the Climate Speed Bonus (for replacing old fossil fuel/biomass heating systems) and an Income Bonus (for households with an annual taxable income up to €40,000).",
+        "program_name": "Bundesförderung für effiziente Gebäude – Einzelmaßnahmen (BEG EM)",
+        "funding_percentage": "Grants up to 70% of eligible costs. Base rates for grants: 15% for measures on the building envelope, non-heating system technology, and heating optimization for efficiency; 30% for solar thermal systems, biomass heating, heat pumps, fuel cell heating, hydrogen-ready heating, innovative heating technology, and connections to building/heating networks; 50% for heating optimization for emission reduction and for expert planning/construction supervision. Bonuses for owner-occupiers include: Climate Speed Bonus (up to 20% for replacing specified old heating systems), Income Bonus (30% for households with annual taxable income up to €40,000). Other bonuses: iSFP Bonus (5% for measures part of an individual renovation roadmap), Efficiency Bonus for heat pumps (5% for specific heat sources or natural refrigerants). An additional flat-rate surcharge of €2,500 for biomass systems meeting specific low-emission standards for dust."
+      }
+    ]
+  },
+  "error": null,
+  "warning": null,
+  "sources": null
+}

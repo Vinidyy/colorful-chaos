@@ -1,26 +1,32 @@
 import os
 import json
+from datetime import datetime
 from dotenv import load_dotenv
 from firecrawl import FirecrawlApp
-from datetime import datetime
 
-# Load .env for API key
+# Load environment variables
 load_dotenv()
-api_key = os.getenv("FIRE_CRAWL_API_KEY")
+api_key = os.getenv("FIRECRAWL_API_KEY")
+
 if not api_key:
-    raise RuntimeError("FIRE_CRAWL_API_KEY not found in environment variables.")
+    raise RuntimeError("❌ FIRECRAWL_API_KEY not found in .env file!")
 
-# Create FirecrawlApp instance
+# Initialize Firecrawl app
 app = FirecrawlApp(api_key=api_key)
+print(f"✅ Firecrawl API initialized.")
 
-# Load links from scrape_links.json
-with open("scrape_links.json", "r", encoding="utf-8") as file:
-    urls = json.load(file)
+# Load URLs from file
+with open("scrape_links.json", "r", encoding="utf-8") as f:
+    urls = json.load(f)
 
 if not isinstance(urls, list) or not urls:
     raise ValueError("❌ scrape_links.json must contain a non-empty list of URLs")
 
-# Define prompt & schema
+print(f"🌐 Loaded {len(urls)} URLs:")
+for u in urls:
+    print(f"  - {u}")
+
+# Prompt
 prompt = (
     "Extract all current energy efficiency programs or subsidies for residential homeowners. "
     "For each program, include:\n"
@@ -30,6 +36,9 @@ prompt = (
     "- deadline (if any)\n"
     "- source URL"
 )
+
+# Optional schema
+use_schema = True
 
 schema = {
     "type": "object",
@@ -52,32 +61,51 @@ schema = {
     "required": ["programs"]
 }
 
-agent_config = {
-    "model": "FIRE-1"
-}
+agent_config = {"model": "FIRE-1"}
 
-print("🔍 Running Firecrawl extraction on provided URLs...")
+# Run extraction
+print("🔍 Running Firecrawl extraction...")
 try:
-    extract_result = app.extract(
-        urls,
-        prompt=prompt,
-        schema=schema,
-        agent=agent_config
-    )
+    if use_schema:
+        extract_result = app.extract(
+            urls,
+            prompt=prompt,
+            schema=schema,
+            agent=agent_config
+        )
+    else:
+        extract_result = app.extract(
+            urls,
+            prompt=prompt,
+            agent=agent_config
+        )
 except Exception as e:
-    print("❌ Extraction failed:", e)
+    print("❌ Firecrawl extraction failed:", e)
     exit(1)
 
-# Extract list of programs from result
-programs = extract_result.model_dump().get("programs", [])
+# Save raw output
+timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+raw_output_path = f"firecrawl_raw_{timestamp}.json"
+with open(raw_output_path, "w", encoding="utf-8") as f:
+    f.write(extract_result.model_dump_json(indent=2))
+
+print(f"📄 Saved raw Firecrawl output to: {raw_output_path}")
+
+# Extract programs list properly
+programs = extract_result.model_dump().get("data", {}).get("programs", [])
+
+if not programs:
+    print("⚠️ No 'programs' found in extract_result['data'].")
+    exit(0)
+
+print(f"✅ Extracted {len(programs)} programs.")
 
 # Save structured JSON
-timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-json_output_path = f"firecrawl_extracted_programs_{timestamp}.json"
-with open(json_output_path, "w", encoding="utf-8") as f:
-    json.dump(programs, f, indent=2, ensure_ascii=False, default=str)
+structured_output_path = f"firecrawl_extracted_programs_{timestamp}.json"
+with open(structured_output_path, "w", encoding="utf-8") as f:
+    json.dump(programs, f, indent=2, ensure_ascii=False)
 
-print(f"✅ Raw JSON saved to: {json_output_path}")
+print(f"✅ Saved structured JSON to: {structured_output_path}")
 
 # Generate Markdown report
 md_output_path = f"firecrawl_results_{timestamp}.md"
@@ -86,21 +114,20 @@ def render_markdown(programs_list):
     sections = []
     for entry in programs_list:
         markdown = f"## Förderung: {entry.get('program_name', 'Unbekannt')}\n"
-        if 'funding_percentage' in entry:
+        if 'funding_percentage' in entry and entry['funding_percentage']:
             markdown += f"- **Höhe**: {entry['funding_percentage']}\n"
-        if 'eligibility' in entry:
+        if 'eligibility' in entry and entry['eligibility']:
             markdown += f"- **Zweck / Voraussetzungen**: {entry['eligibility']}\n"
-        if 'deadline' in entry:
+        if 'deadline' in entry and entry['deadline']:
             markdown += f"- **Frist**: {entry['deadline']}\n"
-        if 'website' in entry:
+        if 'website' in entry and entry['website']:
             markdown += f"- **Quelle**: [{entry['website']}]({entry['website']})\n"
         markdown += "---\n"
         sections.append(markdown)
     return "\n".join(sections)
 
-markdown_content = render_markdown(programs)
-
+md_content = render_markdown(programs)
 with open(md_output_path, "w", encoding="utf-8") as f:
-    f.write(markdown_content)
+    f.write(md_content)
 
-print(f"✅ Markdown results saved to: {md_output_path}")
+print(f"✅ Markdown report saved to: {md_output_path}")

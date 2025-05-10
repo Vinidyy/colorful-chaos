@@ -1,0 +1,146 @@
+{
+  "id": null,
+  "status": "completed",
+  "expiresAt": "2025-05-11T00:27:15Z",
+  "success": true,
+  "data": {
+    "programs": [
+      {
+        "website": "https://www.bafa.de/SharedDocs/Downloads/DE/Energie/beg_infoblatt_foerderfaehige_kosten.pdf?__blob=publicationFile&v=7",
+        "deadline": "No specific application deadline mentioned in this document. The information sheet is valid in its current version at the time of application.",
+        "eligibility": "Owners of existing residential buildings (Wohngebäude), including owner-occupiers, undertaking eligible individual energy efficiency measures. This can include measures on the building envelope, building technology (excluding heating), heating systems, and heating optimization.",
+        "program_name": "Bundesförderung für effiziente Gebäude – Einzelmaßnahmen (BEG EM) für Wohngebäude",
+        "funding_percentage": "Funding is available as grants (Zuschüsse) or low-interest loans with repayment grants (zinsgünstige Kredite mit Tilgungszuschüssen). Specific amounts or percentages apply to certain measures or bonuses, e.g., a €2,500 supplement for biomass heating meeting specific low emission standards for particulate matter (<2.5mg/m³); Klimageschwindigkeits-Bonus (Climate Speed Bonus) for early replacement of fossil fuel heating systems; 65% of the heat pump component costs in specific bivalent compact units; 5% of total costs as an investment premium for hydrogen-ready heaters. Funding for expert planning and construction supervision is also available."
+      },
+      {
+        "website": "https://www.bafa.de/SharedDocs/Downloads/DE/Energie/beg_infoblatt_foerderfaehige_kosten.pdf?__blob=publicationFile&v=7",
+        "deadline": "No specific application deadline mentioned in this document. The information sheet is valid in its current version at the time of application.",
+        "eligibility": "Owners renovating a residential building (Wohngebäude), including holiday homes and weekend houses if classified as residential buildings under GEG, to an 'Effizienzhaus' (energy-efficient house) standard. This also applies to the creation of new residential units through expansion or conversion under certain conditions.",
+        "program_name": "Bundesförderung für effiziente Gebäude – Wohngebäude (BEG WG)",
+        "funding_percentage": "Funding is available as grants (Zuschüsse) or low-interest loans with repayment grants (zinsgünstige Kredite mit Tilgungszuschüssen) for comprehensive renovation to an Effizienzhaus standard. Funding rates and maximum eligible costs vary based on the achieved Effizienzhaus level and potential bonuses (e.g., EE-Klasse for integration of renewable energy, NH-Klasse for sustainability, Serielle Sanierung bonus for using prefabricated elements, Worst-Performing-Building bonus). Funding for expert planning, construction supervision, and sustainability certification is also available."
+      },
+      {
+        "website": "https://www.badenova.de/privatkunden/heizung/foerderung/",
+        "deadline": "",
+        "eligibility": "Private owners and co-owners of existing residential properties in Germany (including owner-occupied or rented single-family houses, multi-family houses, and condominiums), as well as housing owner communities (WEG).",
+        "program_name": "Bundesförderung für effiziente Gebäude (BEG) - Heizungsförderung durch KfW",
+        "funding_percentage": "Up to 70%"
+      },
+      {
+        "website": "https://www.bafa.de/DE/Energie/Energieberatung/Energieberatung_Wohngebaeude/energieberatung_wohngebaeude_node.html",
+        "deadline": "",
+        "eligibility": "Eigentümer von Bestandsimmobilien (Wohngebäude)",
+        "program_name": "Energieberatung für Wohngebäude (EBW)",
+        "funding_percentage": "bis zu 50 Prozent der Kosten"
+      },
+      {
+        "website": "http://www.bafa.de/beg",
+        "deadline": "",
+        "eligibility": "Bauherren und Sanierer von Wohngebäuden",
+        "program_name": "Bundesförderung für effiziente Gebäude (BEG) - Fachplanung und Baubegleitung",
+        "funding_percentage": "bis zu 50 Prozent der Kosten"
+      },
+      {
+        "website": "https://www.foerderdatenbank.de/FDB/Content/DE/Foerderprogramm/Bund/BMWi/bundesfoerderung-effiziente-gebaeude-em.html",
+        "deadline": "The program directive is valid until December 31, 2030. Specific bonus rates, like the Climate Speed Bonus, have phased deadlines (e.g., 20% rate until Dec 31, 2028).",
+        "eligibility": "Residential homeowners (Hauseigentümer) and condominium owners' associations (Wohnungseigentümergemeinschaften). Owner-occupiers (selbstnutzende Eigentümer) are eligible for specific bonuses like the Climate Speed Bonus (for replacing old heating systems) and Income Bonus (for households with annual taxable income up to EUR 40,000).",
+        "program_name": "Bundesförderung für effiziente Gebäude – Einzelmaßnahmen (BEG EM)",
+        "funding_percentage": "Grants up to 70% of eligible costs. Base grant rates: 15% for building envelope measures, non-heating system technology, and efficiency-improving heating optimization; 30% for solar thermal systems, biomass heaters, heat pumps, fuel cell heating, hydrogen-ready heaters, innovative renewable heating, and building/district heating network connections; 50% for emission-reducing heating optimization and expert planning/construction support. Various bonuses can apply, such as a Climate Speed Bonus (up to 20% for early replacement of fossil fuel heating), Income Bonus (30%), iSFP Bonus (5% for measures in an individual renovation roadmap), and heat pump efficiency bonus (5%). An additional EUR 2,500 surcharge for very low-emission biomass systems. A supplementary KfW loan with a reduced interest rate is also available for up to 100% of eligible expenses (max EUR 120,000 per residential unit for owner-occupiers with household income up to EUR 90,000)."
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Land/NRW/nrw-bank-nachhaltig-wohnen.html",
+        "deadline": "",
+        "eligibility": "Privatperson",
+        "program_name": "NRW.BANK.Nachhaltig Wohnen",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Land/Berlin/effiziente-gebaeude-plus.html",
+        "deadline": "",
+        "eligibility": "Kommune, Öffentliche Einrichtung, Privatperson, Unternehmen, Verband/Vereinigung",
+        "program_name": "Effiziente GebäudePLUS",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Land/NRW/nrw-bank-gebaeudesanierung.html",
+        "deadline": "",
+        "eligibility": "Privatperson",
+        "program_name": "NRW.BANK.Gebäudesanierung",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Land/Hessen/energetische-foerderung-im-rahmen-des-hessischen.html",
+        "deadline": "",
+        "eligibility": "Unternehmen, Forschungseinrichtung, Hochschule, Kommune, Privatperson, Verband/Vereinigung, Öffentliche Einrichtung",
+        "program_name": "Energetische Förderung im Rahmen des Hessischen Energiegesetzes",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Land/Berlin/ibb-weg-finanzierung-gemeinschaftseigentum.html",
+        "deadline": "",
+        "eligibility": "Privatperson, Verband/Vereinigung",
+        "program_name": "IBB WEG-Finanzierung – Finanzierung von Maßnahmen am Gemeinschaftseigentum",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Bund/BMWi/bundesfoerderung-effiziente-gebaeude-em.html",
+        "deadline": "",
+        "eligibility": "Kommune, Öffentliche Einrichtung, Privatperson, Unternehmen, Verband/Vereinigung",
+        "program_name": "Bundesförderung für effiziente Gebäude – Einzelmaßnahmen (BEG EM)",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Land/Berlin/ibb-wohnraum-modernisieren.html",
+        "deadline": "",
+        "eligibility": "Privatperson, Unternehmen, Verband/Vereinigung",
+        "program_name": "IBB Wohnraum modernisieren",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Land/Rheinland-Pfalz/isb-darlehen-modernisierung-von-mietwohnungen.html",
+        "deadline": "",
+        "eligibility": "Unternehmen, Privatperson, Öffentliche Einrichtung, Verband/Vereinigung",
+        "program_name": "Wohnraumförderung – Modernisierung von Mietwohnungen",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Bund/BMWi/bundesfoerderung-effiziente-wohngebaeude.html",
+        "deadline": "",
+        "eligibility": "Öffentliche Einrichtung, Privatperson, Unternehmen, Verband/Vereinigung",
+        "program_name": "Bundesförderung für effiziente Gebäude – Wohngebäude (BEG WG)",
+        "funding_percentage": ""
+      },
+      {
+        "website": "FDB/Content/DE/Foerderprogramm/Land/Bayern/weg-modernisierungsprogramm-baymodweg.html",
+        "deadline": "",
+        "eligibility": "Privatperson",
+        "program_name": "Modernisierung von Gebäuden von Wohnungseigentümergemeinschaften (WEG-Modernisierungsprogramm – BayModWEG)",
+        "funding_percentage": ""
+      },
+      {
+        "website": "https://www.nrwbank.de/de/foerderung/foerderprodukte/60050/nrwbank-nachhaltig-wohnen.html",
+        "deadline": "Antragstellung vor Baubeginn bzw. vor Abschluss eines Liefer-, Leistungs- oder Kaufvertrags.",
+        "eligibility": "Privatpersonen, die Wohneigentum zur Selbstnutzung in Nordrhein-Westfalen bauen, sanieren oder erwerben (Ersterwerb) möchten.",
+        "program_name": "NRW.BANK.Nachhaltig Wohnen",
+        "funding_percentage": "Bis zu 50% der förderfähigen Investitionskosten bei Neubauvorhaben und bis zu 100% bei Sanierungsvorhaben."
+      },
+      {
+        "website": "https://www.nrwbank.de/de/foerderung/foerderprodukte/60050/nrwbank-nachhaltig-wohnen.html",
+        "deadline": "Antrag vor Baubeginn bzw. vor dem Kauf eines Objekts.",
+        "eligibility": "Privatpersonen, die Wohneigentum zur Selbstnutzung in Nordrhein-Westfalen bauen, sanieren oder erstmalig erwerben und eine Förderung im Rahmen der Bundesförderung für effiziente Gebäude (BEG), Klimafreundlicher Neubau (KfN), Wohneigentum für Familien (WEF) oder ein Nachhaltigkeitszertifikat beantragt haben, oder bei Neubau/Ersterwerb den Standard EH 40 EE oder EH 40 Plus planen.",
+        "program_name": "NRW.BANK.Nachhaltig Wohnen",
+        "funding_percentage": "Bis zu 50% der förderfähigen Investitionskosten bei Neubauvorhaben, bis zu 100% der förderfähigen Investitionskosten bei Sanierungsvorhaben."
+      },
+      {
+        "website": "https://www.nrwbank.de/de/foerderung/foerderprodukte/60050/nrwbank-nachhaltig-wohnen.html",
+        "deadline": "Antrag muss vor Baubeginn bzw. vor dem Kauf eines Objekts bei der Hausbank gestellt werden.",
+        "eligibility": "Privatpersonen, die Wohneigentum zur Selbstnutzung in Nordrhein-Westfalen bauen, sanieren oder erwerben (Ersterwerb). Erfordert Antrag auf Förderung (BEG, KfN, WEF) oder Nachhaltigkeitszertifikat, oder Nachweis von EH 40 EE / EH 40 Plus Standard bei Neubau/Ersterwerb.",
+        "program_name": "NRW.BANK.Nachhaltig Wohnen",
+        "funding_percentage": "Bis zu 100% der förderfähigen Investitionskosten bei Sanierungsvorhaben und bis zu 50% der förderfähigen Investitionskosten bei Neubauvorhaben."
+      }
+    ]
+  },
+  "error": null,
+  "warning": null,
+  "sources": null
+}
