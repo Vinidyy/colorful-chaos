@@ -26,7 +26,7 @@ export default function TypewriterText({
 				onAnimationComplete={onComplete}
 			>
 				{words.map((w, i) => (
-					<motion.span key={i} variants={word} className="mr-1 whitespace-pre">
+					<motion.span key={i} variants={word} className="mr-1">
 						{w + ' '}
 					</motion.span>
 				))}

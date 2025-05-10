@@ -16,7 +16,7 @@ export default function ChoiceGrid({
 	const container = {
 		show: {
 			transition: {
-				delayChildren: 0.75,
+				delayChildren: 0.5,
 				staggerChildren: staggerMs / 1000,
 			},
 		},
@@ -39,8 +39,8 @@ export default function ChoiceGrid({
 			}}
 		>
 			{choices.map((c, i) => (
-				<motion.div key={i} variants={item} className="w-fit!">
-					<Button variant="outline" className="py-6 text-xl font-normal" onClick={() => onPick(c)}>
+				<motion.div key={i} variants={item}>
+					<Button size="lg" onClick={() => onPick(c)}>
 						{c}
 					</Button>
 				</motion.div>
