@@ -2,11 +2,15 @@
 
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import { VerticalStack } from '@/components/ui/vertical-stack';
+import { useState } from 'react';
 
 export default function Home() {
+	const [identity, setIdentity] = useState('home');
+
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-center bg-[#fafbfa]">
-			<div className="flex flex-col items-center gap-6">
+			<VerticalStack identity={identity}>
 				<Image
 					src="/home.png"
 					alt="Home illustration"
@@ -56,8 +60,12 @@ export default function Home() {
 					</span>
 				</div>
 
-				<Button>
-					Discover Energy Savings
+				<Button
+					onClick={() => {
+						identity == 'home' ? setIdentity('chat') : setIdentity('home');
+					}}
+				>
+					{identity == 'home' ? 'Discover Energy Savings' : 'Back to Home'}
 					<svg width="18" height="18" fill="none" viewBox="0 0 24 24">
 						<path
 							stroke="currentColor"
@@ -68,7 +76,7 @@ export default function Home() {
 						/>
 					</svg>
 				</Button>
-			</div>
+			</VerticalStack>
 		</main>
 	);
 }
