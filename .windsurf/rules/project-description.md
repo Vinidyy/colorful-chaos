@@ -4,7 +4,7 @@ trigger: always_on
 
 tech stack:
 """
-pnpm, nextjs, tailwind v4, shadcn/ui
+pnpm, nextjs, tailwind v4, shadcn/ui, motion one (motion/react)
 """
 
 spec:

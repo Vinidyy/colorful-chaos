@@ -7,6 +7,7 @@ import AnimatedStack from '@/components/ui/AnimatedStack';
 import { Button } from '@/components/ui/button';
 import questionsData from './questions.json';
 import TypewriterText from '@/components/ui/TypewriterText';
+import { FinalState } from '@/components/ui/FinalState';
 
 interface Question {
 	id: string;
@@ -20,7 +21,7 @@ interface Section {
 }
 
 export default function Home() {
-	const [step, setStep] = useState<'intro' | 'questions' | 'done'>('intro');
+	const [step, setStep] = useState<'intro' | 'questions' | 'done'>('done');
 	const [sectionIdx, setSectionIdx] = useState(0);
 	const [questionIdx, setQuestionIdx] = useState(0);
 
@@ -104,10 +105,44 @@ export default function Home() {
 							initial="hidden"
 							animate="show"
 							exit="hidden"
-							className="flex flex-col items-center justify-center py-24"
+							className="py-12"
 						>
-							<h2 className="mb-4 text-2xl font-semibold">All done!</h2>
-							<p className="text-center text-lg opacity-50">{JSON.stringify(answers)}</p>
+							<FinalState
+								suggestions={[
+									{ title: 'Install Solar Panels', cost: '5,000 - 15,000 EUR', icon: 'solar' },
+									{
+										title: 'Improve Wall Insulation',
+										cost: '1,000 - 4,000 EUR',
+										icon: 'insulation',
+									},
+									{ title: 'Upgrade Heating System', cost: '4,000 - 10,000 EUR', icon: 'radiator' },
+								]}
+								subsidies={[
+									{
+										program: 'Federal Funding for Efficient Buildings (BEG)',
+										amount: 'Up to 20,000 EUR',
+										description: 'Subsidy for energy-efficient renovations and installations.',
+									},
+									{
+										program: 'KfW Energy-efficient Renovation Program',
+										amount: 'Low-interest loans up to 120,000 EUR',
+										description:
+											'Loans for improving energy efficiency and building sustainability.',
+									},
+								]}
+								legalImplications={[
+									{
+										title: 'Compliance with Energy Efficiency Requirements',
+										description:
+											'Ensure your building meets the Niedrigstenergiegebäude (nearly zero-energy building) standards as per § 10.',
+									},
+									{
+										title: 'Adherence to Minimum Thermal Insulation',
+										description:
+											'Follow § 11 for minimum thermal protection to enhance energy efficiency.',
+									},
+								]}
+							/>
 						</motion.div>
 					)}
 				</AnimatePresence>
