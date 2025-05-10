@@ -25,5 +25,12 @@ class ChatResponse(BaseModel):
 
 @app.post("/chat", response_model=ChatResponse)
 async def chat_endpoint(req: ChatRequest):
-    answer = query(req.question)
+    # explicit normal‐mode
+    answer = query(req.question, mode="normal")
+    return ChatResponse(answer=answer)
+
+
+@app.post("/chat/json", response_model=ChatResponse)
+async def chat_json_endpoint(req: ChatRequest):
+    answer = query(req.question, mode="json")
     return ChatResponse(answer=answer)
