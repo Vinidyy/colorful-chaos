@@ -8,6 +8,7 @@
       "keyword": "",
       "cost": 0
     }
+    // Add more options as needed
   ],
   "subsidies": {
     "potential_savings": 0,
@@ -15,14 +16,15 @@
   },
   "legal": [
     {
-      "type": "applies",
+      "type": "applies",  // or "might apply"
       "keyword": "",
       "description": ""
     },
     {
-      "type": "might apply",
+      "type": "might apply",  // or "applies"
       "keyword": "",
       "description": ""
     }
+    // Add more legal entries as needed
   ]
 }
