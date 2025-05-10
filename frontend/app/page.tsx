@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import Image from 'next/image';
+import HomeModelCanvas from '@/components/ui/HomeModelCanvas';
 import QuestionStack from '@/components/ui/QuestionStack';
 import AnimatedStack from '@/components/ui/AnimatedStack';
 import { Button } from '@/components/ui/button';
@@ -79,14 +79,7 @@ export default function Home() {
 							className="w-full"
 						>
 							<AnimatedStack identity="intro">
-								<Image
-									src="/home.png"
-									alt=""
-									width={128}
-									height={128}
-									priority
-									className="select-none"
-								/>
+								<HomeModelCanvas />
 								<TypewriterText text="Homely helps you instantly ⚡️ save energy, 📊 cut costs, and 💶 unlock subsidies." />
 								<Button variant="primary" onClick={() => setStep('questions')}>
 									Get started
