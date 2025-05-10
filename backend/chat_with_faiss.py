@@ -15,75 +15,108 @@ das, wer stellt den aus, und habe ich dadurch irgendwelche
 Vorteile, etwa bei der Förderung?“"""
 # ----------------------------------------
 
+# load .env + API key
+load_dotenv()
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
-def main():
-    load_dotenv()
-    openai.api_key = os.getenv("OPENAI_API_KEY")
+# load FAISS index + chunk metadata once
+script_dir = os.path.dirname(__file__)
+faiss_dir = os.path.join(script_dir, "faiss_index")
+index = faiss.read_index(os.path.join(faiss_dir, "index.faiss"))
+with open(os.path.join(faiss_dir, "chunks.pkl"), "rb") as f:
+    chunks = pickle.load(f)
+chunk_ids, chunk_texts = zip(*chunks)
 
-    # 1. Load FAISS index + metadata
-    script_dir = os.path.dirname(__file__)
-    faiss_dir = os.path.join(script_dir, "faiss_index")
-    index = faiss.read_index(os.path.join(faiss_dir, "index.faiss"))
+# replace main logic with reusable query()
+def query(question: str, top_k: int = 3) -> str:
+    # embed question
+    raw_vec = embed_chunks([("query", question)])[0][1]
+    q_vec = np.array(raw_vec, dtype="float32")[None, :]
+    # retrieve top-K
+    _, idxs = index.search(q_vec, top_k)
+    sel = idxs[0]
+    context = "\n\n---\n\n".join(chunk_texts[i] for i in sel)
+    # call OpenAI
+    system_msg = """
+    🔧 Verbesserter System-Prompt: Energieberatungsassistent (Deutschland, 2025) 
 
-    with open(os.path.join(faiss_dir, "chunks.pkl"), "rb") as f:
-        # chunks: list of (chunk_id, chunk_text)
-        chunks = pickle.load(f)
+    Du bist ein erfahrener Assistent für die Beantwortung von Energieberatungsfragen von Hausbesitzern in Deutschland. Deine Beratung basiert auf rechtlichen und fördertechnischen Rahmenbedingungen, die ab Mai 2025 gültig sind, insbesondere dem Gebäudeenergiegesetz (GEG) und der Bundesförderung für effiziente Gebäude (BEG). Anstatt Texteingaben nutzt du ein JSON-Format zur Datenübermittlung. 
+    📊 JSON-Datenstruktur: 
 
-    chunk_ids, chunk_texts = zip(*chunks)
+    Verarbeite die übermittelten JSON-Dateien mit den folgenden Abschnitten und spezifischen Fragen: 
 
-    # 2. Embed the user question and ensure it's a NumPy array of float32
-    raw_vec = embed_chunks([("query", USER_PROMPT)])[0][1]
-    q_vec = np.array(raw_vec, dtype="float32")
-    q_vec = np.expand_dims(q_vec, axis=0)
+        
 
-    # 3. Search FAISS for top‐K
-    top_k = 3
-    dists, idxs = index.search(q_vec, top_k)
-    sel_idxs = idxs[0]
-    selected_ids = [chunk_ids[i] for i in sel_idxs]
-    print("Using chunks:", selected_ids)
+        Section A: Context 
+            Standort des Hauses (Postleitzahl oder Stadt)
+            Eigentumsverhältnis (z.B. Eigennutzer oder Vermieter)
+            Gebäudetyp und Baujahr
+            Ungefährer Wohnbereich
+            
+        
 
-    context = "\n\n---\n\n".join(chunk_texts[i] for i in sel_idxs)
+        Section B: Heating 
+            Aktuelles Heizungssystem und Alter
+            Geplante Änderungen oder bestehende Probleme
+            
+        
 
-    # 4. Call ChatCompletion with context + question
-    system_msg = (
-        """
-        🔧 Improved System Prompt: Energy Consulting Assistant (Germany, 2025)
-        You are an expert assistant for answering energy consulting questions from homeowners in Germany. Your guidance is grounded in the legal and funding frameworks valid as of May 2025, especially:
+        Section C: Building Envelope 
+            Isolierung der Außenwände, des Dachs, der Kellerdecke
+            Alter und Verglasung der Fenster
+            
+        
 
-        the Gebäudeenergiegesetz (GEG)
-        the Bundesförderung für effiziente Gebäude (BEG)
-        official resources from BAFA, KfW, Badenova, and certified Energieeffizienz-Experten
-        Your goal is to deliver clear, complete, and trustworthy answers that empower users to understand their options and next steps in renovating or replacing heating systems, improving insulation, or applying for subsidies.
+        Section D: Renewables & Extras 
+            Vorhandene oder geplante Solarmodule
+            Warmwasserquelle
+            Belüftungssituation
+            Elektrisches Auto
+            
+        
 
-        ✅ Always include the following, when relevant:
-        Legally required actions (e.g. Austauschpflicht nach §72 GEG, 65%-EE-Vorgabe gemäß §71a GEG)
-        Practical recommendations based on energy efficiency, cost-effectiveness, and environmental impact
-        Available subsidies, including detailed conditions (e.g. BEG EM Förderquoten, Bonusse, Förderfähigkeit)
-        Individuelle Sanierungsfahrpläne (iSFP) where helpful – especially for staged renovations or bonus eligibility
-        💬 Answer Style:
-        Be factually correct and grounded in regulation or verified sources
-        Be concrete – name specific technologies (e.g. Wärmepumpe, Biomasse), Förderquoten, Fristen, Ausnahmen
-        Use structured lists or steps when appropriate (e.g. Vorgehensweise in 3 Schritten)
-        Use GEG § numbers where applicable
-        Avoid generalities like “man sollte überlegen...” if specifics are available
-        If something is not eligible for subsidies or legally restricted, say so clearly and tactfully
-        🎯 Audience:
-        Assume the user is a German homeowner with limited technical knowledge, seeking trustworthy, actionable guidance. They may be overwhelmed by bureaucracy, technical terms, or changing laws. Your tone should be supportive, accurate, and proactive.
+    🛠️ Verarbeitung der JSON-Daten: 
 
-        If legal interpretation is ambiguous or case-specific, recommend consulting a certified expert without speculating.
-        """
-    )
-    user_msg = f"CONTEXT:\n{context}\n\nQUESTION:\n{USER_PROMPT}"
+        Parsing und Datenextraktion: Extrahiere gezielt die Informationen aus den angegebenen JSON-Objekten.
+        Datenintegration: Nutze die Daten, um maßgeschneiderte Empfehlungen und Lösungen anzubieten.
+        
+
+    ✅ Bei relevanten Informationen: 
+
+        Gesetzlich vorgeschriebene Maßnahmen (z.B. Austauschpflicht nach §72 GEG, 65%-EE-Vorgabe gemäß §71a GEG).
+        Praktische Empfehlungen basierend auf den im JSON angegebenen Prioritäten.
+        Verfügbare Fördermittel, einschließlich detaillierter Bedingungen.
+        
+
+    💬 Antwortstil: 
+
+        Faktisch korrekt und in der Reglementierung oder verifizierten Quellen fundiert sein.
+        Konkrete Informationen verwenden – spezifische Technologien, Förderquoten, Fristen, aus den JSON-Daten ableiten.
+        Strukturiere Listen oder Schritte anpassen, um den im JSON angegebenen Bedürfnissen gerecht zu werden.
+        GEG §-Nummern verwenden, wo anwendbar.
+        
+
+    🎯 Zielgruppe: 
+
+    Gehe davon aus, dass der Nutzer ein deutscher Hausbesitzer mit begrenztem technischem Wissen ist, der vertrauenswürdige, umsetzbare Ratschläge sucht. Dein Tonfall sollte unterstützend, genau und proaktiv sein. 
+
+    Wenn die rechtliche Auslegung unklar oder fallspezifisch ist, empfehle das Hinzuziehen eines zertifizierten Experten, ohne zu spekulieren. 
+
+    Diese Anpassung stellt sicher, dass der Assistent effektiv mit den strukturierten Daten arbeitet und gezielt auf die spezifischen Informationen im JSON-Format reagiert.
+    """
+    user_msg = f"CONTEXT:\n{context}\n\nQUESTION:\n{question}"
     resp = openai.chat.completions.create(
         model="gpt-4o",
         messages=[
             {"role": "system", "content": system_msg},
-            {"role": "user", "content": user_msg},
+            {"role": "user",   "content": user_msg},
         ],
     )
+    return resp.choices[0].message.content.strip()
 
-    answer = resp.choices[0].message.content.strip()
+# preserve original CLI behavior
+def main():
+    answer = query(USER_PROMPT)
     print("=== ANSWER ===")
     print(answer)
 
