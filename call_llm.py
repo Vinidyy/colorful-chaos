@@ -1,7 +1,8 @@
 import requests
 import json
+from typing import Optional
 
-def call_llm( content: str, model: str = "openai/gpt-4o", role: str = "user") -> str:
+def call_llm( content: str, model: str = "openai/gpt-4o", role: str = "user") -> Optional[str]:
   """
   Calls an llm with the provided parameters and returns the response as a string. 
   If the call fails the response will be None.
@@ -9,7 +10,7 @@ def call_llm( content: str, model: str = "openai/gpt-4o", role: str = "user") ->
   response = requests.post(
     url="https://openrouter.ai/api/v1/chat/completions",
     headers={
-      "Authorization": "Bearer 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",
+      "Authorization": "Bearer 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",
       "HTTP-Referer": "<YOUR_SITE_URL>", # Optional. Site URL for rankings on openrouter.ai.
       "X-Title": "<YOUR_SITE_NAME>", # Optional. Site title for rankings on openrouter.ai.
     },
