@@ -7,6 +7,7 @@ from langchain_openai import OpenAIEmbeddings
 from dotenv import load_dotenv
 from langchain.schema import Document
 from langchain.vectorstores import FAISS
+from langchain.document_loaders import PyPDFLoader
 
 
 def load_markdown_files(md_folder: str) -> Dict[str, str]:
@@ -20,6 +21,21 @@ def load_markdown_files(md_folder: str) -> Dict[str, str]:
         name = os.path.basename(path)
         with open(path, "r", encoding="utf-8") as f:
             docs[name] = f.read()
+    return docs
+
+
+def load_pdf_files(pdf_folder: str) -> Dict[str, str]:
+    """
+    Read all .pdf files under pdf_folder and return a mapping
+    from filename to its full text content.
+    """
+    docs = {}
+    for path in glob.glob(os.path.join(pdf_folder, "*.pdf")):
+        name = os.path.basename(path)
+        loader = PyPDFLoader(path)
+        pages = loader.load()
+        text = "\n".join([p.page_content for p in pages])
+        docs[name] = text
     return docs
 
 
@@ -64,9 +80,13 @@ def embed_chunks(
 
 def main():
     script_dir = os.path.dirname(__file__)
+    # 1. Load all Markdown + PDF files
     md_folder = os.path.join(script_dir, "markdown")
-    # 1. Load markdown files
-    docs = load_markdown_files(md_folder)
+    pdf_folder = os.path.join(script_dir, "pdfs")
+    docs_md = load_markdown_files(md_folder)
+    docs_pdf = load_pdf_files(pdf_folder)
+    docs = {**docs_md, **docs_pdf}
+
     # 2. Split into chunks
     chunks = split_chunks(docs)
     # 3. Embed chunks
