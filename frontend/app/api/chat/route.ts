@@ -7,7 +7,7 @@ export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const result = streamText({
-    model: openrouter('gpt-4o'),
+    model: openrouter('gpt-4.1-nano'),
     messages,
   });
 

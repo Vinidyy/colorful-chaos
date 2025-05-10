@@ -3,7 +3,8 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@theme inline {
+@theme {
+  --color-tint: #70A470;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
