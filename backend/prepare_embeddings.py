@@ -1,9 +1,12 @@
 import os
 import glob
+import pickle
 from typing import Dict, List, Tuple
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings
 from dotenv import load_dotenv
+from langchain.schema import Document
+from langchain.vectorstores import FAISS
 
 
 def load_markdown_files(md_folder: str) -> Dict[str, str]:
@@ -70,6 +73,23 @@ def main():
     embeddings = embed_chunks(chunks)
     # embeddings now ready for storage or further indexing
     print(f"Generated embeddings for {len(embeddings)} chunks.")
+
+    # 4. Persist to a FAISS vector store for fast semantic retrieval
+    faiss_docs = [
+        Document(page_content=text, metadata={"source": cid})
+        for cid, text in chunks
+    ]
+    # re-instantiate the same embedder
+    openai_key = os.getenv("OPENAI_API_KEY")
+    embedder = OpenAIEmbeddings(model="text-embedding-ada-002", openai_api_key=openai_key)
+    vector_store = FAISS.from_documents(faiss_docs, embedder)
+    vector_store.save_local(os.path.join(script_dir, "faiss_index"))
+    print("Saved FAISS index to 'faiss_index' directory.")
+
+    # Persist chunk metadata for retrieval
+    with open(os.path.join(script_dir, "faiss_index", "chunks.pkl"), "wb") as f:
+        pickle.dump(chunks, f)
+    print("Saved chunk metadata to 'faiss_index/chunks.pkl'.")
 
 
 if __name__ == "__main__":
