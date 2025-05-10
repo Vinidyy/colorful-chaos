@@ -1,0 +1,30 @@
+{
+  "options": [
+    {
+      "keyword": "",
+      "cost": 0
+    },
+    {
+      "keyword": "",
+      "cost": 0
+    }
+    // Add more options as needed
+  ],
+  "subsidies": {
+    "potential_savings": 0,
+    "description": ""
+  },
+  "legal": [
+    {
+      "type": "applies",  // or "might apply"
+      "keyword": "",
+      "description": ""
+    },
+    {
+      "type": "might apply",  // or "applies"
+      "keyword": "",
+      "description": ""
+    }
+    // Add more legal entries as needed
+  ]
+}

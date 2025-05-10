@@ -1,0 +1,227 @@
+{
+  "sections": [
+    {
+      "id": "A",
+      "title": "Context",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Where is the home located?",
+          "type": "text",
+          "input": "zip_or_city"
+        },
+        {
+          "id": "2",
+          "text": "Do you own and live in the home?",
+          "type": "single-choice",
+          "choices": [
+            "Yes, owner-occupier",
+            "Yes, but I rent it out",
+            "I’m a tenant",
+            "I’m about to buy / inherit"
+          ]
+        },
+        {
+          "id": "3",
+          "text": "Which type best describes the building?",
+          "type": "single-choice",
+          "choices": [
+            "Detached / single-family",
+            "Semi / row house",
+            "Apartment in multi-family",
+            "Other"
+          ]
+        },
+        {
+          "id": "4",
+          "text": "About when was it built?",
+          "type": "single-choice",
+          "choices": [
+            "Before 1978",
+            "1978–1995",
+            "1996–2009",
+            "2010–2020",
+            "After 2020",
+            "Not sure"
+          ]
+        },
+        {
+          "id": "5",
+          "text": "Approximate living area?",
+          "type": "single-choice",
+          "choices": [
+            "< 50 m²",
+            "50–100 m²",
+            "100–150 m²",
+            "150–250 m²",
+            "> 250 m²",
+            "Not sure"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": "Heating",
+      "questions": [
+        {
+          "id": "6",
+          "text": "What heats your home today?",
+          "type": "single-choice",
+          "choices": [
+            "Gas boiler",
+            "Oil boiler",
+            "District heat",
+            "Heat pump",
+            "Wood / pellets",
+            "Electric night-storage / direct",
+            "Other / don’t know"
+          ]
+        },
+        {
+          "id": "7",
+          "text": "How old is that system (roughly)?",
+          "type": "single-choice",
+          "choices": [
+            "> 30 years",
+            "20–30 y",
+            "10–20 y",
+            "< 10 y",
+            "Not sure"
+          ],
+          "alternativeInput": {
+            "type": "slider",
+            "label": "Rate your system’s efficiency",
+            "range": ["Poor", "Average", "Good"]
+          }
+        },
+        {
+          "id": "8",
+          "text": "Any plans or problems with the heater?",
+          "type": "single-choice",
+          "choices": [
+            "Works but expensive",
+            "Planning to replace soon",
+            "Just exploring",
+            "Recently replaced / fine"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": "Building Envelope",
+      "questions": [
+        {
+          "id": "9",
+          "text": "Exterior walls insulation?",
+          "type": "single-choice",
+          "choices": [
+            "None / original",
+            "Some retrofit",
+            "Well insulated (modern)",
+            "Not sure"
+          ]
+        },
+        {
+          "id": "10",
+          "text": "Roof / top-floor insulation?",
+          "type": "single-choice",
+          "choices": [
+            "None / thin",
+            "Some",
+            "Well insulated",
+            "Flat roof / N/A",
+            "Not sure"
+          ]
+        },
+        {
+          "id": "11",
+          "text": "Basement ceiling under living area?",
+          "type": "single-choice",
+          "choices": [
+            "Uninsulated",
+            "Already insulated",
+            "No basement / slab",
+            "Not sure"
+          ]
+        },
+        {
+          "id": "12",
+          "text": "Windows age & glazing?",
+          "type": "single-choice",
+          "choices": [
+            "Single-glazed / pre-1990",
+            "Double-glazed 90s",
+            "Modern double / triple",
+            "Mixed",
+            "Not sure"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "title": "Renewables & Extras",
+      "questions": [
+        {
+          "id": "13",
+          "text": "Solar panels (PV)?",
+          "type": "single-choice",
+          "choices": [
+            "Already installed",
+            "No—but interested",
+            "No—not interested / roof unsuitable"
+          ],
+          "followUp": {
+            "condition": "No—but interested",
+            "question": {
+              "id": "13a",
+              "text": "Is your roof mostly south-facing & unobstructed?",
+              "type": "single-choice",
+              "choices": [
+                "Mostly south",
+                "East/West",
+                "Flat/mixed",
+                "Not sure"
+              ]
+            }
+          }
+        },
+        {
+          "id": "14",
+          "text": "Hot-water source?",
+          "type": "single-choice",
+          "choices": [
+            "Same boiler",
+            "Electric boiler / instant",
+            "Solar-thermal panels",
+            "Not sure"
+          ]
+        },
+        {
+          "id": "15",
+          "text": "Ventilation situation?",
+          "type": "single-choice",
+          "choices": [
+            "No mech. ventilation",
+            "Heat-recovery system present",
+            "Some fans / extractors",
+            "Problems with damp / mold",
+            "Not sure"
+          ]
+        },
+        {
+          "id": "16",
+          "text": "Electric car now or planned?",
+          "type": "single-choice",
+          "choices": [
+            "Already have EV",
+            "Planning to buy",
+            "No plans"
+          ]
+        }
+      ]
+    }
+  ]
+}
