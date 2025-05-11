@@ -159,7 +159,7 @@ export default function Home() {
 										</button>
 									</div>
 								) : reportData ? (
-									<FinalState {...reportData} />
+									<FinalState {...reportData} questions={sections} answers={answers} />
 								) : (
 									<div className="text-center">
 										<p className="text-xl text-red-500">
