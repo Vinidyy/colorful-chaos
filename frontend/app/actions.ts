@@ -23,7 +23,14 @@ export async function fetchReportFromAnswers(answers: SectionAnswers[]): Promise
 		}
 
 		// Call the API with the formatted answers
-		const response = await fetch('http://192.168.1.158:8000/chat/json', {
+		const baseUrl = process.env.SERVER_BASE_URL;
+		if (!baseUrl) {
+			return {
+				data: null,
+				error: 'SERVER_BASE_URL is not set in environment variables',
+			};
+		}
+		const response = await fetch(`${baseUrl}/chat/json`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
