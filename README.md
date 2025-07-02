@@ -3,6 +3,8 @@
 Badenova Hackathon Challenge
 
 ## AI Energie Consultant
+
+This energy consultant uses a conditional questionnaire to determine home upgrades and potential subsidies for homeowners, with a stylized interface to make it easily accessible to everyone
 ![image](https://github.com/user-attachments/assets/1fd083f7-88b2-4d1a-9b38-35a456d5b599)
 
 ![image](https://github.com/user-attachments/assets/3dc0ab9b-00a9-47ed-bf3e-aa2454146b43)
